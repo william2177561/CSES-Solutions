@@ -17,7 +17,6 @@ jobs:
           - windows-2022
           - ubuntu-24.04
           - macos-14 # arm64
-          - macos-13
         compiler:
           - llvm
           - gcc
@@ -56,3 +55,15 @@ jobs:
           ninja: true
           vcpkg: true
           cppcheck: true # instead of `true`, which chooses the default version, you can pass a specific version.
+      
+      - name: Configure CMake
+        run: |
+          cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build Project
+        run: |
+          cmake --build build --config Release
+
+      - name: Run Tests
+        run: |
+          ctest --test-dir build --output-on-failure -C Release
