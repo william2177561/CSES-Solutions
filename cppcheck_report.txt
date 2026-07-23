@@ -1,0 +1,8 @@
+Introductory Problems/Two_Sets.cpp:6:11: error: Unmatched '{'. Configuration: ''. [syntaxError]
+int main(){
+          ^
+Sorting and Searching/Concert_Tickets.cpp:9:18: style: Variable 'M' is assigned a value that is never used. [unreadVariable]
+    vector<int> M(m);
+                 ^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingIncludeSystem]
+
